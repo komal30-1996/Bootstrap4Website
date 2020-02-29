@@ -1,0 +1,248 @@
+/*Custom Css */
+
+body{
+    padding-top: 5rem;
+}
+.starter-template{
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+/* Navbar */
+.bg-dark{
+    background-color: #21ddfb!important;
+}
+.navbar-dark .navbar-nav .nav-link{
+    color: #fff;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+   border-bottom: 2px solid #fff;
+}
+
+.active{
+    border-bottom: 2px solid #fff;
+}
+
+
+#login{
+    padding: 60px 40px;
+    border: 1px solid #ddd;
+    margin: 40px 0;
+    background-color: linear-gradient(#21ddfb,#19a4ba);
+}
+#login.form-control{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    font-size: 18px;
+}
+#login.btn-sucess{
+    width: 170px;
+    border-radius: 50px;
+    height: 50px;
+}
+p{
+    margin-top: 80px;
+}
+#registrations{
+     background: url('img/pharmamanu.jpg');
+    padding: 50px 10px;
+}
+registeration form{
+    border: 1px solid #ddd;
+    margin:40px 0;
+}
+#registrationform.form-control{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    font-size: 18px;
+}
+
+
+#registrationform.btn-primary{
+    background-color: #21ddfb;
+    width: 170px;
+    border-radius: 50px;
+    height: 50px;
+}
+
+/* Carousel */
+
+.carousel-caption{
+    padding-bottom: 12%;
+}
+
+.carousel-caption h3{
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.carousel-caption p{
+    font-size: 1.5rem;
+}
+/* Buttons */
+
+.btn-info{
+    background-color: #21ddfb;
+    padding: 1rem 4rem;
+    border: 3px solid transparent;
+
+}
+
+.btn-info:hover{
+    background-color: transparent;
+    border: 3px solid #21ddfb;
+    color: #21ddfb;
+}
+.btn-info:active{
+    background-color: transparent !important;
+    border: 3px solid #21ddfb !important;
+    color: #21ddfb !important;
+    box-shadow: 5px 5px 25px #444;
+}
+.text-center{
+    color: #21ddfb;
+}
+
+
+h5{
+    font-size: 1.75rem;
+}
+
+h2{
+ color: #21ddfb;
+}
+#nurse{
+    padding: 50px 10px;
+    color: black;
+    background: linear-gradient(#21ddfb,#19a4ba);
+}
+
+.modal-content{
+    background: #21ddfb;
+}
+
+.card{
+    box-shadow: 2px 5px 20px #777; 
+    color: black;
+}
+#plx{
+background: url(../img/sk.jpg);
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;    
+}
+.wtitle{
+    padding: 150px 20px;
+}
+#number{
+
+    padding: 100px 0px;
+}
+.numc h2{
+    color: #fff;
+}
+/* Testimonils */
+#about{
+    background: #2b2b2b;
+}
+
+.revs{
+    padding: 100px;
+}
+.card{
+    box-shadow: 2px 5px 20px #777; 
+}
+.modal-content{
+    background: #21ddfb;
+}
+
+.card{
+    box-shadow: 2px 5px 20px #777; 
+    color: black;
+}
+.modal-content{
+    background: #21ddfb;
+}
+.mn{
+    color: #fff;
+}
+#contact{
+    padding: 100px 0;
+    box-shadow: 5px 10px 25px #555;
+    position: relative;
+    z-index: 22;
+    
+}
+
+
+#hire{
+    font-size: 2rem;
+}
+#footer{
+    background: #333;
+    padding: 10px;
+}
+.cpt{
+    padding-top: 29px;
+}
+
+.ftaw i{
+    font-size: 50px;
+    color: #21ddfb;
+    padding-top: 15px;
+    padding-right: 15px;
+}
+/* Back TO Top */
+.btt{
+    
+   background:#21ddfb7a;
+    width: 50px;
+    position: fixed;
+    right: 0px;
+    bottom: 50px;
+    z-index: 9998;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 5px 10px 25px #555;
+ 
+}
+
+.btt:hover{
+   background:#21ddfb;
+
+}
+.hide{
+    opacity: 0;
+}
+
+.show{
+    opacity: 1;
+    
+}
+
+ media Quaries 
+@media only screen and (max-width:991px){
+    .blogo{
+        text-align: center;
+    }
+}
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+    
+    
+
+    

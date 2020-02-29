@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link href="rst.css" rel="stylesheet" />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+
+  <body>
+    <!-- <div class="container h-100">
+      <div class="d-flex justify-content-center h-100">
+      <div class="user_card"> -->
+      <div
+        class="col-lg-6 m-auto d-block"
+        style="width: 600px; margin-left: 250px; margin-top: 50px;"
+      > 
+       <div class="jumbotron">
+        <h1 class="text-center">Sign Up</h1>
+        <hr>
+        <form
+       
+          action="#"
+          onsubmit="return validation()"
+          id="form"
+          novalidate
+        >
+          <div class="form-group">
+            <label>Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="fname"
+              class="form-control"
+              autocomplete="off"
+              onkeyup="validation()"
+              required
+            />
+            <span id="name" class="text-danger font-weight-bold"></span>
+          </div>
+
+          <div class="form-group">
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              id="femail"
+              class="form-control"
+              autocomplete="off"
+              onkeyup="validation()"
+              required
+            />
+            <span id="email" class="text-danger font-weight-bold"></span>
+          </div>
+
+          <div class="form-group">
+            <label>Username:</label>
+            <input
+              type="text"
+              name="username"
+              id="uname"
+              class="form-control"
+              autocomplete="off"
+              onkeyup="validation()"
+              required
+            />
+            <span id="username" class="text-danger font-weight-bold"></span>
+          </div>
+
+          <div class="form-group">
+            <label>Password:</label>
+            <input
+              type="password"
+              name="fpass"
+              id="pass"
+              class="form-control"
+              autocomplete="off"
+              onkeyup="validation()"
+              required
+            />
+            <span id="password" class="text-danger font-weight-bold"></span>
+          </div>
+
+          <div class="form-group">
+            <label>Confirm Password:</label>
+            <input
+              type="password"
+              name="fcpass"
+              id="confpass"
+              class="form-control"
+              autocomplete="off"
+              onkeyup="validation()"
+              required
+            />
+            <span
+              id="confirmpassword"
+              class="text-danger font-weight-bold"
+            ></span>
+          </div>
+
+         <!-- <input
+            type="button"
+            name="bsubmit"
+            value="submit"
+            class="btn btn-primary btn-block"
+            id="submit"
+            button
+            onclick="validation()"
+          /> -->
+          <input type="button" name="bsubmit" value="submit" class="btn btn-primary btn-block" id="submit" button
+            onclick="myFunction()"/>
+            <br>
+            <p class="change_link">
+              Already a member ?
+              <a href="login1.html" class="to_register ml-6"> Go and log in </a>
+            </p>
+          </div>
+        </form>
+      </div>
+      </div>
+    <!-- </div> -->
+
+    <!-- <script type="text/javascript">
+      $(document).ready(function() {
+        $(form).submit(function() {
+          $flag = true;
+          $(this)
+            .find("reuired")
+            .each(function() {
+              if ($(this).val() == "") {
+                $flag = false;
+                $(this)
+                  .addclass("blank")
+                  .siblings(".red")
+                  .childern("small")
+                  .html($(this).attr("name"));
+              } else {
+                $(this)
+                  .removeclass("blank")
+                  .siblings(".red")
+                  .childern("small")
+                  .html("");
+              }
+            });
+          return $flag;
+        });
+      });-->
+
+    <script>
+      function detect() {
+        console.log("ssadsadsa");
+      }
+      function validation() {
+        
+        // var x1 = document.getElementById("fname").value;
+        // var x2 = document.getElementById("femail").value;
+        // var x3 = document.getElementById("uname").value;
+        // var x4 = document.getElementById("pass").value;
+        //var x5 = document.getElementById("confpass").value;
+
+        var name = document.getElementById("fname").value;
+
+        console.log(name.length);
+
+        var email = document.getElementById("femail").value;
+
+        // console.log("form submitted", email.length);
+
+        // var pattern=/^[^]+@[^]+\.[a-z]{2,3}$/
+        console.log(email);
+        var username = document.getElementById("uname").value;
+
+       console.log(username);
+
+        var password = document.getElementById("pass").value;
+
+        console.log(password);
+
+        var confirmpassword = document.getElementById("confpass").value;
+
+        console.log(confirmpassword);
+      
+
+        if (name == "") {
+          document.getElementById("name").innerHTML = "Please fill the name";
+          return false;
+        }
+
+        if (name.length <= 3) {
+          console.log(name.length);
+          document.getElementById("name").hidden = false;
+          document.getElementById("name").innerHTML =
+            "user length must  be between 3 and 20";
+          return;
+        } else {
+          console.log(name.length + "");
+          document.getElementById("name").hidden = true;
+        }
+
+        if (!isNaN(name)) {
+          console.log(name);
+          document.getElementById("name").hidden = false;
+          document.getElementById("name").innerHTML =
+            "Only characters are allowed";
+          return false;
+        } else {
+          console.log(name + "");
+          document.getElementById("name").hidden = true;
+        }
+        //alert("Name:" + name + "/n");
+
+        // if (name.length >= 3 || name.length >= 20) {
+        //console.log(name.length);
+        //document.getElementById("name").innerHTML =
+        //"user length must  be between 3 and 20";
+        //return;
+        //}
+        if (email == "") {
+          document.getElementById("email").innerHTML =
+            "Please fill the valid email";
+          return false;
+        }
+        if (email.indexOf("@") <= 0) {
+          console.log(email);
+          document.getElementById("email").hidden = false;
+          document.getElementById("email").innerHTML =
+            "please fill the valid email @ in proper format";
+          return false;
+        } else {
+          console.log(email + "");
+          document.getElementById("email").hidden = true;
+        }
+        if (
+          email.charAt(email.length - 4) != "." &&
+          email.charAt(email.length - 3) != "."
+        ) {
+          console.log(email);
+          document.getElementById("email").hidden = false;
+          document.getElementById("email").innerHTML =
+            "Please fill the valid email . in proper format";
+          return false;
+        } else {
+          console.log(email + "");
+          document.getElementById("email").hidden = true;
+        }
+
+        if (username == "") {
+          document.getElementById("username").innerHTML =
+            "Userrname is required";
+          return false;
+        }
+        if (username.length <= 3) {
+          console.log(username.length);
+          document.getElementById("username").hidden = false;
+          document.getElementById("username").innerHTML =
+            "user length must  be between 3 and 20";
+          return;
+        } else {
+          console.log(username.length + "");
+          document.getElementById("username").hidden = true;
+        }
+
+        if (!isNaN(username)) {
+          console.log(username);
+          document.getElementById("username").hidden = false;
+          document.getElementById("username").innerHTML =
+            "Only characters are allowed";
+          return false;
+        } else {
+          console.log(name + "");
+          document.getElementById("username").hidden = true;
+        }
+
+        if (password == "") {
+          document.getElementById("password").innerHTML =
+            "Please fill the password";
+          return false;
+        }
+        //if (password.length <= 5 || password.length > 20) {
+        if (password.length <= 5) {
+          console.log(password);
+          document.getElementById("password").hidden = false;
+          document.getElementById("password").innerHTML =
+            "password should be at least 6 characters";
+          return false;
+        } else {
+          console.log(password + "");
+          document.getElementById("password").hidden = true;
+       }
+
+      //   if (confirmpassword == "") {
+      //     console.log(confirmpassword);
+      //     document.getElementById("confirmpassword").hidden = false;
+      //     // document.getElementById("confirmpassword").innerHTML =
+      //     // "Please fill the confirm password";
+
+      //     return false;
+      //   } else {
+      //     console.log(confirmpassword + "");
+      //     document.getElementById("confirmpassword").hidden = true;
+      //   //  document.getElementById("password").innerHTML =
+      //    // "Please fill the confirm password";
+
+      //   }
+         
+      //   if (password != confirmpassword) {
+      //   document.getElementById("confirmpassword").hidden = false;
+      // // document.getElementById("confirmpassword").innerHTML =
+      //     // "Please fill the confirm password";
+      //      document.getElementById("confirmpassword").innerHTML =
+      //       "Password are not matching";
+      //         document.getElementById("confirmpassword").hidden = false;
+      //         document.getElementById("confirmpassword").innerHTML =
+      //     "Please fill the confirm password";
+       
+      //    return false;
+      //    } else {
+      //    console.log(password + "IN ELSE PART");
+      //   document.getElementById("confirmpassword").hidden = true;
+        
+      //    }
+
+        if (confirmpassword == "") {
+          console.log(confirmpassword);
+          document.getElementById("confirmpassword").hidden = false;
+        document.getElementById("confirmpassword").innerHTML =
+           "Please fill the confirm password";
+            
+           return false;
+         } else {
+           console.log(confirmpassword + "");
+           document.getElementById("confirmpassword").hidden = true; 
+       // document.getElementById("password").innerHTML =
+            //"Please fill the confirm password";
+
+        }
+
+        if (password != confirmpassword) {
+         document.getElementById("confirmpassword").hidden = false;
+         document.getElementById("confirmpassword").innerHTML =
+            "Password are not matching";
+          return false;
+            } else{
+              console.log(confirmpassword + "");
+              document.getElementById("confirmpassword").hidden=true;
+            }
+            
+            
+            // else {
+        // console.log(password + "IN ELSE PART");
+        //document.getElementById("confirmpassword").hidden = true;
+        //  }
+        
+      }
+       
+      
+        // alert(
+        // "Name : " +
+        //name +
+        //  "\n Email : " +
+        //  email +
+        //  "\n Username:" +
+        //  username +
+        //  "\n Password:" +
+        //  password +
+        //   "\n Confirm Password:" +
+        //  confirmpassword +
+        //  "\n"
+        // );
+        // $("#submit").click(function() {
+        //   var name = $("#fname").val();
+
+        //   var email = $("#femail").val();
+
+        //   var username = $("#uname").val();
+
+        //   var password = $("#fpass").val();
+
+        //   var confirmpassword = $("#confpass").val();
+
+          // alert(
+          //"Name : " +
+          // name +
+          //  "\n Email : " +
+          // email +
+          // "\n Username:" +
+          // username +
+          // "\n Password:" +
+          // password +
+          //  "\n Confirm Password:" +
+          // confirmpassword +
+          //  "\n"
+          //  );
+      //     if (
+      //       name == "" ||
+      //       email == "" ||
+      //       username == "" ||
+      //       password == "" ||
+      //       confirmpassword == ""
+      //     ) {
+      //       swal({
+      //         title: "Fields Empty!!",
+      //         text: "Please Check Me Missing Fields!!",
+      //         icon: "warning",
+      //         button: "ok"
+      //       });
+      //     } else {
+      //       swal({
+      //         title: "successfully submitted!!!",
+      //         icon: "success",
+      //         button: "ok"
+      //       });
+      //     }
+      //   });
+      //   alert(
+      //     "Name : " +
+      //       name +
+      //       "\n Email : " +
+      //       email +
+      //       "\n Username:" +
+      //       username +
+      //       "\n Password:" +
+      //       password +
+      //       "\n Confirm Password:" +
+      //       confirmpassword +
+      //       "\n"
+      //   );
+      // }
+
+      // var form = document.getElementById("form");
+      // form.onsubmit = function(e) {
+      //  e.preventDefault();
+      // console.log(form.name.value);
+      // console.log(form.email.value);
+      // console.log(form.username.value);
+      // console.log(form.fpass.value);
+      //  console.log(form.fcpass.value);
+      // };
+    </script>
+   <script>
+     function myFunction(){
+       var name = document.getElementById("fname").value;
+       var email = document.getElementById("femail").value;
+        var username = document.getElementById("uname").value;
+         var password = document.getElementById("pass").value;
+          var confirmpassword = document.getElementById("confpass").value;
+          alert(
+         "Name : " +
+           name +
+            "\n Email : " +
+            email +
+          "\n Username:" +
+            username +
+            "\n Password:" +
+            password +
+             "\n Confirm Password:" +
+             confirmpassword +
+            "\n"
+        );
+        if (
+            name == "" ||
+           email == "" ||
+           username == "" ||
+           password == "" ||
+          confirmpassword == ""
+        ) {
+           swal({
+               title: "Fields Empty!!",
+               text: "Please Check Me Missing Fields!!",
+              icon: "warning",
+              button: "ok"
+             });
+           } else {
+            swal({
+              title: "successfully submitted!!!",
+             icon: "success",
+              button: "ok"
+            });
+           }
+        
+
+     }
+     </script>
+  
+   
+    <!--//<script>
+     // function seterror(id, error) {
+       // element = document.getElementById(id);
+       // element = getElementByClassName("formerror")[0].innerHTML = error;
+     //ss }
+     //function validation() {
+       // var name = document.getElementById("fname").value;
+        // if (name == "") {
+        // document.getElementById('name').innerHTML = "Please fill the name";
+        //return false;
+        // }
+        // if ((name.length < 3) || (name.length > 20)) {
+        // document.getElementById('name').innerHTML = "user length must  be between 3 and 20";
+        //return false;
+q        // }
+        //if (!isNaN(name)) {
+        //  document.getElementById('name').innerHTML = "Only characters are allowed";
+        // return false;
+
+        // }
+       // document.getElementById("name").innerHTML =
+          //"Length of the name is too short";
+
+       // var name = document.forms["myForm"]["name"].value;
+
+       // if (name.length < 5) {
+         // seterror("name", "Length of name is to short");
+         // return false;
+         // returnval = false;
+       // }
+       // return returnval;
+     // }
+    //</script>-->
+  </body>
+</html>
